@@ -1,0 +1,50 @@
+#%RAML 1.0
+title: bookticket
+version: v1
+baseUri: https://localhost:8081/api/book
+/book:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            properties:
+              from: string
+              to: string
+              ticketType: string
+              passengerName: string
+              comment: string
+            example:
+              {
+                "from": "City A",
+                "to": "City B",
+                "passengerName": "Priya",
+                "ticketType": "Premium/General",
+                "comment": "Provide your from route,to route ,ticketType either as Premium (Rs.1300/)or General(Rs.800/-)"   
+              }
+  post:
+    responses:
+      200:
+        body:
+             application/json:
+                  properties:
+                      date: string
+                      time: string
+                      from: string
+                      to: string
+                      ticketType: string
+                      ticketCost: string
+                      passengerName: string
+                      comment: string
+                  example:
+                    {
+                      "date" : "31-01-2024",
+                      "from": "City A",
+                      "to": "City B",
+                      "passengerName": "Priya",
+                      "ticketCost": "1300",
+                      "ticketType": "Premium",
+                      "time": "08:00 AM",
+                      "comment": "Ticket booked successfully enjoy your trip"
+                     }
+           
